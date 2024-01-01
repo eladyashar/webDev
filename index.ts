@@ -14,6 +14,14 @@ app.post('/', (req, res) => {
     res.sendStatus(200);
   })
 
+app.get('/users/:userId', (req: Request, res: Response) => {
+  // Access userId from the URL params
+  const userId = req.params.userId;
+
+  // For demonstration, just send back the userId
+  res.send(`User ID is: ${userId}`);
+});
+
 app.listen(port, () => {
     console.log(`Example app listening on port ${port}`)
   })
